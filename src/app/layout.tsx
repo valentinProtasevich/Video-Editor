@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Stack } from "@mui/material";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Stack direction="row" columnGap={4}>
+          <Link href="/">Home</Link>
+          <Link href="/trimVideo">Trim Video</Link>
+          <Link href="/spliceVideos">Splice Videos Together</Link>
+          <Link href="/thumbnailSelector">Thumbnail Selection</Link>
+          <Link href="/webm">WebM thumbnail selection</Link>
+          <Link href="/CustomVideoPlayer">CustomVideoPlayer</Link>
+        </Stack>
         {children}
       </body>
     </html>
